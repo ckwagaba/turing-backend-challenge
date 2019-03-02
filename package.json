@@ -3,7 +3,22 @@
   "version": "1.0.0",
   "description": "Turing Backend Challenge",
   "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ],
+    "coverageDirectory": "./coverage"
+  },
   "repository": "https://github.com/ckwagaba/turing-backend-challenge.git",
   "author": "Colin Wagaba <ckwagaba@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.1.0"
+  }
 }
