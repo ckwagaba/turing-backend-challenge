@@ -1,0 +1,9 @@
+{
+  "name": "hot-deals",
+  "version": "1.0.0",
+  "description": "Turing Backend Challenge",
+  "main": "index.js",
+  "repository": "https://github.com/ckwagaba/turing-backend-challenge.git",
+  "author": "Colin Wagaba <ckwagaba@gmail.com>",
+  "license": "MIT"
+}
