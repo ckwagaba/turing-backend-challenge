@@ -4,7 +4,8 @@
   "description": "Turing Backend Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "start": "nodemon index.js"
   },
   "jest": {
     "collectCoverage": true,
@@ -18,7 +19,13 @@
   "repository": "https://github.com/ckwagaba/turing-backend-challenge.git",
   "author": "Colin Wagaba <ckwagaba@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "mongoose": "^5.4.16",
+    "validator": "^10.11.0"
+  },
   "devDependencies": {
-    "jest": "^24.1.0"
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10"
   }
 }
