@@ -1,6 +1,9 @@
-/** @module db */
+/**
+ * database module
+ * @module index
+ */
 
-// load environment variables
+// load development environment variables
 require('dotenv').config();
 
 // import data modeling library
