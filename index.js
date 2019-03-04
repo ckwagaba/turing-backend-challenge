@@ -3,7 +3,10 @@
  * @module index
  */
 
-// load development environment variables
+/**
+ * load environment variables
+ * local variables - set on dev machine
+ */
 require('dotenv').config();
 
 // import data modeling library

@@ -6,19 +6,19 @@
   "scripts": {
     "start": "nodemon index.js",
     "test": "nyc mocha ./src/tests/*.test.js",
-    "upload-coverage": "nyc report --reporter=text-lcov && codecov"
+    "upload-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": "https://github.com/ckwagaba/turing-backend-challenge.git",
   "author": "Colin Wagaba <ckwagaba@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^6.2.0",
     "mongoose": "^5.4.16",
     "validator": "^10.11.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "codecov": "^3.2.0",
+    "dotenv": "^6.2.0",
     "mocha": "^6.0.2",
     "nodemon": "^1.18.10",
     "nyc": "^13.3.0"
