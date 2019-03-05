@@ -23,10 +23,10 @@ class Database {
   }
 
   /**
-     * setup db connection
-     * @param {string} uri
-     * @return {promise}
-     */
+   * setup db connection
+   * @param {string} uri
+   * @return {promise}
+   */
   _connect () {
     mongoose.connect(uri)
       .then(() => {
