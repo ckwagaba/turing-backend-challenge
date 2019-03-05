@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "pre-commit": "test",
     "pretest": "standard --fix",
     "test": "nyc mocha ./src/tests/*.test.js",
     "upload-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
@@ -23,6 +24,7 @@
     "mocha": "^6.0.2",
     "nodemon": "^1.18.10",
     "nyc": "^13.3.0",
+    "pre-commit": "^1.2.2",
     "sinon": "^7.2.7",
     "standard": "^12.0.1"
   }
