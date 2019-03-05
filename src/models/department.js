@@ -4,16 +4,16 @@
  */
 
 // import data modeling library
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 // define schema
 const departmentSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    description: String
-});
+  name: {
+    type: String,
+    required: true
+  },
+  description: String
+})
 
 // export model
-module.exports = mongoose.model('Department', departmentSchema);
+module.exports = mongoose.model('Department', departmentSchema)
