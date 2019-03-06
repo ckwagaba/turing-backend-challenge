@@ -1,6 +1,6 @@
 /**
- * define department model
- * @module department
+ * Department model
+ * @module department.model
  */
 
 // import data modeling library
@@ -8,10 +8,7 @@ const mongoose = require('mongoose')
 
 // define schema
 const departmentSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
+  name: { type: String, required: true },
   description: String
 })
 

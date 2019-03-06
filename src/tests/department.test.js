@@ -1,5 +1,5 @@
 /**
- * test department model
+ * test Department model
  * @module department.test
  */
 
@@ -9,8 +9,8 @@
 // import assertion library
 const expect = require('chai').expect
 
-// import Department model
-const Department = require('../models/department')
+// import department model
+const Department = require('../models/department.model')
 
 /** group tests */
 describe('Department Model', () => {

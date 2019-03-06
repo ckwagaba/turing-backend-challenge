@@ -1,5 +1,5 @@
 /**
- * test category model
+ * test Category model
  * @module category.test
  */
 
@@ -10,7 +10,7 @@
 const expect = require('chai').expect
 
 // import category model
-const Category = require('../models/category')
+const Category = require('../models/category.model')
 
 /** group tests */
 describe('Category Model', () => {
