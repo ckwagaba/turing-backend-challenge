@@ -1,6 +1,6 @@
 /**
- * test Category model
- * @module category.test
+ * test Department model
+ * @module department.test
  */
 
 /* eslint-env mocha */
@@ -9,14 +9,14 @@
 // import assertion library
 const expect = require('chai').expect
 
-// import category model
-const Category = require('../models/category.model')
+// import department model
+const Department = require('./department.model')
 
 /** group tests */
-describe('Category Model', () => {
+describe('Department Model', () => {
   it('should have a name', () => {
-    const category = new Category()
-    category.validate((err) => {
+    const department = new Department()
+    department.validate((err) => {
       expect(err.errors['name']).to.exist
     })
   })

@@ -1,6 +1,6 @@
 /**
  * database module
- * @module index
+ * @module db
  */
 
 /**

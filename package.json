@@ -2,20 +2,21 @@
   "name": "hot-deals",
   "version": "1.0.0",
   "description": "Turing Backend Challenge",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js",
-    "pre-commit": "test",
-    "pretest": "standard --fix",
-    "test": "nyc mocha ./src/tests/*.test.js",
-    "upload-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
-  },
   "repository": "https://github.com/ckwagaba/turing-backend-challenge.git",
   "author": "Colin Wagaba <ckwagaba@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
     "mongoose": "^5.4.16",
     "validator": "^10.11.0"
+  },
+  "scripts": {
+    "start": "nodemon ./src/config/server.js",
+    "pre-commit": "test",
+    "pretest": "standard --fix",
+    "test": "nyc mocha ./src/**/*.test.js",
+    "upload-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "devDependencies": {
     "chai": "^4.2.0",
