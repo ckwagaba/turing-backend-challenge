@@ -93,6 +93,7 @@ module.exports = (app, db) => {
         .then((doc) => {
           // on success
           if (doc === null) {
+            /** findById returns null if ID format is correct even if resource doesn't exist */
             // resource not found
             res.status(404)
             res.send({
@@ -102,6 +103,84 @@ module.exports = (app, db) => {
             // return resource
             res.status(200)
             res.send(doc)
+          }
+        })
+        .catch((err) => {
+          // on failure
+          res.status(500)
+          res.send({
+            message: 'Oops! Something went wrong.'
+          })
+          console.log(err)
+        })
+    } else {
+      res.status(400)
+      res.send({
+        message: 'Please use a valid ID.'
+      })
+    }
+  })
+
+  /** update department */
+  app.put('/department/:id', (req, res) => {
+    // id should be valid
+    if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+      Department.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then((doc) => {
+          // on success
+          if (doc === null) {
+            /** findById returns null if ID format is correct even if resource doesn't exist */
+            // resource not found
+            res.status(404)
+            res.send({
+              message: 'Department with ID not found.'
+            })
+          } else {
+            // return resource
+            res.status(200)
+            res.send({
+              message: 'Department successfully updated.',
+              doc
+            })
+          }
+        })
+        .catch((err) => {
+          // on failure
+          res.status(500)
+          res.send({
+            message: 'Oops! Something went wrong.'
+          })
+          console.log(err)
+        })
+    } else {
+      res.status(400)
+      res.send({
+        message: 'Please use a valid ID.'
+      })
+    }
+  })
+
+  /** delete department by id */
+  app.delete('/department/:id', (req, res) => {
+    // id should be valid
+    if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+      Department.findByIdAndDelete(req.params.id)
+        .then((doc) => {
+          // on success
+          if (doc === null) {
+            /** findById returns null if ID format is correct even if resource doesn't exist */
+            // resource not found
+            res.status(404)
+            res.send({
+              message: 'Department with ID not found.'
+            })
+          } else {
+            // return resource
+            res.status(200)
+            res.send({
+              message: 'Department successfully deleted.',
+              doc
+            })
           }
         })
         .catch((err) => {

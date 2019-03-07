@@ -6,21 +6,23 @@
 // import db connection
 const db = require('./db')
 
-// import server framework
+// import web framework
 const express = require('express')
-const server = express()
 
-// process url-encoded request data
+// use framework for our app
+const app = express()
+
+// process data sent via the request body
 const bodyParser = require('body-parser')
-server.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // import routes
-require('../routes/main.route')(server, db)
+require('../routes/main.route')(app, db)
 
 // define port
 const port = 8080
 
 // start server
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`listening on port ${port}`)
 })
