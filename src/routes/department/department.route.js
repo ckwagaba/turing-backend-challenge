@@ -50,9 +50,18 @@ module.exports = (app, db) => {
 
   /** get all departments */
   app.get('/department', (req, res) => {
+    // number of items returned per request
+    const limit = 2
+
+    // default page number
+    const pageNumber = req.query.p || 1
+    
+    // offset
+    const offSet = (pageNumber - 1) * limit
+
     if (req.query.q) {
       // filter departments by name
-      Department.find({ name: req.query.q })
+      Department.find({ name: req.query.q }, null, { limit, skip: offSet })
         .then((docs) => {
           // on success
           res.status(200)
@@ -68,7 +77,7 @@ module.exports = (app, db) => {
         })
     } else {
       // all
-      Department.find()
+      Department.find(null, null, { limit, skip: offSet })
         .then((docs) => {
           // on success
           res.status(200)
